@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setTimeout(function() {
         animateMaskExpansion()
-    }, 6000);
+    }, 4800);
 
 
     // random shape
