@@ -3,10 +3,10 @@ import '../scss/styles.scss'
 document.addEventListener("DOMContentLoaded", function() {
 
     const svgFiles = [
-        "/mask1.svg",
-        "/mask2.svg",
-        "/mask3.svg",
-        "/mask4.svg"
+        "./mask1.svg",
+        "./mask2.svg",
+        "./mask3.svg",
+        "./mask4.svg"
     ]; // svg masks file path
     let circle = document.getElementById("maskSVG"); // svg mask id
     let currentRadius = 160 //mask size
