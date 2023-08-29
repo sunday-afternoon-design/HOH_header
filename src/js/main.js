@@ -10,9 +10,7 @@ import '../scss/styles.scss'
 // Append the img element to the div divElement.appendChild(imgElement);
 
 document.addEventListener("DOMContentLoaded", function () {
-    // let x = window.innerWidth; let y = window.innerHeight;
     let circle = document.getElementById("maskSVG");
-    // let cx = 0.05*x; let cy = 0.05*y
     let currentRadius = 160
     let maxRadius = window.innerWidth * 3;
     let increment = 120;
@@ -46,8 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
         window.requestAnimationFrame(tick)
     }
     tick()
-    // document.addEventListener("scroll", function() {   animateMaskExpansion();
-    // });
 
     document.addEventListener("mousemove", function (event) {
         mousex = event.clientX;
