@@ -3,10 +3,10 @@ import '../scss/styles.scss'
 document.addEventListener("DOMContentLoaded", function() {
 
     const svgFiles = [
-        "mask1.svg",
-        "mask2.svg",
-        "mask3.svg",
-        "mask4.svg"
+        "public/mask1.svg",
+        "public/mask2.svg",
+        "public/mask3.svg",
+        "public/mask4.svg"
     ]; // svg masks file path
     let circle = document.getElementById("maskSVG"); // svg mask id
     let currentRadius = 160 //mask size
@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let increment = 120; // expansion speed
     let mousex = 0.5 * window.innerWidth;
     let mousey = 0.5 * window.innerHeight;
+    document.body.classList.add("no-scroll");
 
 
 
@@ -24,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function() {
             circle.setAttribute("width", currentRadius);
             requestAnimationFrame(animateMaskExpansion);
         }
+        document.body.classList.remove("no-scroll");
+        console.log("start")
     }
 
     document.addEventListener("click", function() {
@@ -31,26 +34,9 @@ document.addEventListener("DOMContentLoaded", function() {
         animateMaskExpansion();
     });
 
-    window.addEventListener("scroll", function() {
-        if (hasRun) return; // If the function has already run, exit
-
-        const scrollPosition = window.scrollY;
-        const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercentage = (scrollPosition / documentHeight) * 100;
-
-        if (scrollPercentage >= 10) {
-            animateMaskExpansion()
-                //   console.log("You've scrolled to 10% of the page!");
-            hasRun = true; // Update the flag so the function doesn't run again
-        }
-
-    });
-
     setTimeout(function() {
         animateMaskExpansion()
     }, 6000);
-
-
 
 
     // random shape
