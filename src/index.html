@@ -9,12 +9,20 @@
 </head>
 
 <body>
-  <div id="container">
-    <div id="content">
-<img src="bgvideo.png" id="bgvideo">
-    </div>
-    <div id="maskContainer">
-      <svg id="maskSvg" width="100%" height="100%">
+    <div id="mask_and_content_container">
+
+        <div id="content">
+            <img src="bgvideo.png" id="bgvideo">
+            <img src="bgvideo.png">
+            <img src="bgvideo.png">
+            <img src="bgvideo.png">
+            <img src="bgvideo.png">
+        </div>
+
+
+        <!-- below is the mask code -->
+        <div id="maskContainer">
+            <svg id="maskSvg" width="100%" height="100%">
         <defs>
           <mask id="hole">
             <rect width="100%" height="100%" fill="white"/>
@@ -24,9 +32,11 @@
         </defs>
         <rect width="100%" height="100%" fill="#4DFF9F" mask="url(#hole)" />
       </svg>
+        </div>
+
+
     </div>
-  </div>
-  
+
 </body>
 
 </html>
