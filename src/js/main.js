@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let circle = document.getElementById("maskSVG"); // svg mask id
     let currentRadius = 160 //mask size
     let maxRadius = window.innerWidth * 3;
-    let increment = 100; // expansion speed
+    let increment = 110; // expansion speed
     let mousex = 0.5 * window.innerWidth;
     let mousey = 0.5 * window.innerHeight;
     document
