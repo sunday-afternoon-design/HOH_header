@@ -89,23 +89,25 @@ document.addEventListener("DOMContentLoaded", function () {
             // let newX = centerX - 0.3 * currentWidth;
             // let newY = centerY - 0.1 * currentWidth;9            // circle.setAttribute("x", centerX);
             // circle.setAttribute("y", centerY);
+            increment+=10
             const newX = parseFloat(circle.getAttribute("x")) - 0.5 * increment;
             const newY = parseFloat(circle.getAttribute("y")) - 0.5 * increment;
         
             circle.setAttribute("x", newX);
             circle.setAttribute("y", newY);
-            
-            currentWidth = lerp(currentWidth,maxRadius,.9);
+      
+            currentWidth += increment;
             circle.setAttribute("width", currentWidth);
             
             requestAnimationFrame(animateMaskExpansion);
-
+            console.log("expand")
         } else {
             let rect = circle.getBoundingClientRect();
             currentWidth = maxRadius; // Reset to maxRadius
             circle.setAttribute("x", -0.2 * rect.width);
             circle.setAttribute("y", -0.2 * rect.height);
             circle.setAttribute("href", svgFiles[2]);
+            console.log("noexpand")
         }
         random_mask_lock = false;
         document
