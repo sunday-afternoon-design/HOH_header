@@ -104,9 +104,9 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             let rect = circle.getBoundingClientRect();
             currentWidth = maxRadius; // Reset to maxRadius
-            circle.setAttribute("x", -0.2 * rect.width);
+            circle.setAttribute("x", -0.05 * rect.width);
             circle.setAttribute("y", -0.2 * rect.height);
-            circle.setAttribute("href", svgFiles[2]);
+            circle.setAttribute("href", "./reveal.svg");
             console.log("noexpand")
         }
         random_mask_lock = false;
