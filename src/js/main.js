@@ -3,9 +3,10 @@ import '../scss/styles.scss'
 document.addEventListener("DOMContentLoaded", function () {
    
     const svgFiles = ["./mask1.svg", "./mask2.svg", "./mask3.svg", "./mask4.svg"]; // svg masks file path
+    const svgRevealFiles = ["reveal.svg"]; // svg masks file path
     let circle = document.getElementById("maskSVG"); // svg mask id
     let currentWidth = 160 //mask size
-    let maxRadius = window.innerWidth * 3;
+    let maxRadius = window.innerWidth * 6;
     let increment = 110; // expansion speed
     let mousex = 0.5 * window.innerWidth;
     let mousey = 0.5 * window.innerHeight;
@@ -102,11 +103,11 @@ document.addEventListener("DOMContentLoaded", function () {
             requestAnimationFrame(animateMaskExpansion);
             console.log("expand")
         } else {
-            let rect = circle.getBoundingClientRect();
-            currentWidth = maxRadius; // Reset to maxRadius
-            circle.setAttribute("x", -0.05 * rect.width);
-            circle.setAttribute("y", -0.2 * rect.height);
-            circle.setAttribute("href", "./reveal.svg");
+            // let rect = circle.getBoundingClientRect();
+            currentWidth = maxRadius + 100; // Reset to maxRadius
+            // circle.setAttribute("x", -0.05 * rect.width);
+            // circle.setAttribute("y", -0.2 * rect.height);
+            circle.setAttribute("href", svgRevealFiles);
             console.log("noexpand")
         }
         random_mask_lock = false;
